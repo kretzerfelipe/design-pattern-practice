@@ -3,7 +3,7 @@ export class Product {
     private readonly _id: string,
     private readonly _name: string,
     private readonly _price: number,
-    private readonly _weight: number,
+    private readonly _weightInGrams: number
   ) {
     this.validate();
   }
@@ -20,8 +20,8 @@ export class Product {
     return this._price;
   }
 
-  get weight(): number {
-    return this._weight;
+  get weightInGrams(): number {
+    return this._weightInGrams;
   }
 
   private validate(): void {
@@ -34,8 +34,8 @@ export class Product {
     if (this._price <= 0) {
       throw new Error("Price must be greater than zero");
     }
-    if (this.weight <= 0) {
-      throw new Error("Weight must be greater than zero");
+    if (this.weightInGrams <= 0) {
+      throw new Error("WeightInGrams must be greater than zero");
     }
   }
 }
